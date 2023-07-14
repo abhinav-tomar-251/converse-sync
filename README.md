@@ -42,6 +42,33 @@ ConverseSync is a full-stack web application that provides real-time chat functi
 5. Use the file-sharing feature to send and receive images.
 6. Customize your profile settings and update your information as desired.
 
+## Screenshot
+
+<img width="360" alt="Screenshot 2023-07-14 130001" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/d9e284a9-6139-4060-9993-70263133cff3">
+
+           
+<img width="360" alt="Screenshot 2023-07-14 130038" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/9d920c6f-7460-4541-b8c9-8664aa876f8d">
+
+
+<img width="360" alt="Screenshot 2023-07-14 130419" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/7cf28dc8-af62-4c9c-b0ec-36ee05cdbda8">  
+
+
+<img width="360" alt="Screenshot 2023-07-14 130256" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/11e15c07-4467-41fe-8cb8-32ba0e8ec546">
+
+
+<img width="360" alt="Screenshot 2023-07-14 130107" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/af4b913a-6c01-48d0-8ae5-8fecdc2c8302">
+
+
+
+<img width="360" alt="Screenshot 2023-07-14 130354" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/63c1fcb6-30ad-4729-b6f2-849c672b7ddb">
+
+
+<img width="360" alt="Screenshot 2023-07-14 130328" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/8401ec54-4fda-4f48-a856-3c9bc5b9046f">
+
+
+<img width="360" alt="Screenshot 2023-07-14 130217" src="https://github.com/abhinav-tomar-251/converse-sync/assets/108477690/7d188e35-98dc-4906-b58f-79d8de5c0fe2">
+
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the GitHub repository.
