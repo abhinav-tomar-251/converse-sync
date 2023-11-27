@@ -137,11 +137,11 @@ const Form = () => {
           required 
           placeholder="Type your message here..."
         />
-          <FaMicrophone
+          {/* <FaMicrophone
           size={30}
           className="text-indigo-900 cursor-pointer hover:text-indigo-800"
           onClick={() => setshowAudioRecorder(true)}
-        />
+        /> */}
         <button
           type="submit"
           className="
