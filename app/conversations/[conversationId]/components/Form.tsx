@@ -78,7 +78,7 @@ const Form = () => {
   }
 
   const handleEmojiClick = (emoji: any) => {
-    setValue('message', (message: string) => message+=emoji.emoji);
+    setValue('message', ((message: any) => message+=emoji.emoji));
   }
 
   const [showAudioRecorder, setshowAudioRecorder] = useState(false);
