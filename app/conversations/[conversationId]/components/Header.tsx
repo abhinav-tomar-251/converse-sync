@@ -9,7 +9,9 @@ import { HiChevronLeft, HiEllipsisHorizontal } from "react-icons/hi2";
 import ProfileDrawer from "./ProfileDrawer";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import useActiveList from "@/app/hooks/useActiveList";
-
+import { MdCall } from "react-icons/md";
+import { IoVideocam } from "react-icons/io5";
+import { BiSearchAlt2 } from "react-icons/bi";
 interface HeaderProps {
     conversation: Conversation & {
         users: User[];
@@ -31,6 +33,10 @@ const Header: React.FC<HeaderProps> = (
 
         return isActive? 'Online' : 'Offline';
     },[conversation, isActive]);
+
+    const handleVoiceCall = () => {
+        
+    };
 
     return ( 
       <>
@@ -76,9 +82,16 @@ const Header: React.FC<HeaderProps> = (
                 </div>
             </div>
         </div>
+        <div className="flex gap-6">
+            <MdCall size={32} className="text-indigo-800 cursor-pointer hover:text-indigo-900 transition" />
+            <IoVideocam size={32} className="text-indigo-800 cursor-pointer hover:text-indigo-900 transition" 
+                
+            />
+            <BiSearchAlt2 size={32} className="text-indigo-800 cursor-pointer hover:text-indigo-900 transition" />
                 <HiEllipsisHorizontal size={32} onClick={() => setDrawerOpen(true)}
                    className="text-indigo-800 cursor-pointer hover:text-indigo-900 transition"
                 />
+        </div>        
         </div>
      
       </>      

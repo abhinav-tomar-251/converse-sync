@@ -67,7 +67,9 @@ model Message {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   body String?
   image String?
+  audio  String?
   createdAt DateTime @default(now())
+
 
   seenIds String[] @db.ObjectId
   seen User[] @relation("Seen", fields: [seenIds], references: [id])
@@ -79,3 +81,14 @@ model Message {
   sender User @relation(fields: [senderId], references: [id], onDelete: Cascade)
 }
 
+// model VoiceMessage {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   audioUrl  String
+//   createdAt DateTime @default(now())
+
+//   senderId String @db.ObjectId
+//   sender User @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+//   conversationId String @db.ObjectId
+//   conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+// }

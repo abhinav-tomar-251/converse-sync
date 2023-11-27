@@ -2,6 +2,7 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 import { pusherServer } from "@/app/libs/pusher";
+import { render } from "@headlessui/react/dist/utils/render";
 
 
 export async function POST(
@@ -10,7 +11,7 @@ export async function POST(
     try {
         const currentUser = await getCurrentUser();
         const body = await request.json();
-        const { message, image, conversationId } = body;
+        const { message, image, audioUrl, conversationId } = body;
 
         if(!currentUser?.id || !currentUser?.email){
             return new NextResponse('Unauthorized', { status: 401 });
@@ -20,6 +21,7 @@ export async function POST(
             data: {
                 body: message,
                 image: image,
+                audio: audioUrl,
                 conversation:{
                     connect: {
                         id: conversationId

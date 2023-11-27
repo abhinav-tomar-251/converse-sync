@@ -13,10 +13,17 @@ import {
 import axios from "axios";
 import { CldUploadButton } from "next-cloudinary";
 import useConversation from "@/app/hooks/useConversation";
+import { BsEmojiSmile } from "react-icons/bs";
+import { FaMicrophone } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import EmojiPicker from "emoji-picker-react";
+// import CaptureAudio from "./CaptureAudio";
+import dynamic from "next/dynamic";
 
+const CaptureAudio = dynamic(()=> import('./CaptureAudio'),{ssr:false,});
 const Form = () => {
   const { conversationId } = useConversation();
-
+  
   const {
     register,
     handleSubmit,
@@ -29,6 +36,8 @@ const Form = () => {
       message: ''
     }
   });
+
+
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setValue('message', '', { shouldValidate: true });
@@ -45,6 +54,40 @@ const Form = () => {
     })
   }
 
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const emojiPickerRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: any) => {
+    if(event.target.id !== "emoji-open"){  
+      if (emojiPickerRef.current &&
+         !emojiPickerRef.current.contains(event.target)) {
+        setShowEmojiPicker(false);
+      }
+    }
+  }
+    window.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      window.removeEventListener('click', handleOutsideClick);
+    }
+  }, [emojiPickerRef]);
+
+  const handleEmojiPicker = () => {
+    setShowEmojiPicker(!showEmojiPicker);
+  }
+
+  const handleEmojiClick = (emoji: any) => {
+
+    setValue('message', `${emoji.emoji}`, { shouldValidate: true });
+
+  }
+
+  const [showAudioRecorder, setshowAudioRecorder] = useState(false);
+
+  
+
+
   return ( 
     <div 
       className="
@@ -59,8 +102,25 @@ const Form = () => {
         w-full
       "
     >
+{!showAudioRecorder && (
+    <>
+      <BsEmojiSmile
+        size={32}
+        className="text-indigo-900 cursor-pointer hover:text-indigo-800"
+        id="emoji-open"
+        title="Emoji"
+        onClick={handleEmojiPicker}
+      />
+      {showEmojiPicker && (
+        <div className="absolute bottom-24 z-40" ref={emojiPickerRef}>
+        <EmojiPicker 
+          onEmojiClick={handleEmojiClick}
+        />
+        </div>
+      )}
+      
       <CldUploadButton 
-        options={{ maxFiles: 1 }} 
+        options={{ maxFiles: 10 }} 
         onUpload={handleUpload} 
         uploadPreset="tugcgfjm"
       >
@@ -77,24 +137,34 @@ const Form = () => {
           required 
           placeholder="Type your message here..."
         />
-        <button 
-          type="submit" 
+          <FaMicrophone
+          size={30}
+          className="text-indigo-900 cursor-pointer hover:text-indigo-800"
+          onClick={() => setshowAudioRecorder(true)}
+        />
+        <button
+          type="submit"
           className="
+            bg-indigo-900 
+            text-white 
             rounded-full 
             p-2 
-            bg-indigo-800
-            cursor-pointer 
-            hover:bg-indigo-900
-            transition
+            hover:bg-indigo-800 
+            transition 
+            duration-200 
+            ease-in-out
           "
         >
-          <HiPaperAirplane
-            size={18}
-            className="text-white"
-          />
+          <HiPaperAirplane size={30} />
         </button>
       </form>
+ </>
+ )}
+  {showAudioRecorder && (
+    <CaptureAudio hide={() => setshowAudioRecorder(false)} />
+  )}
     </div>
+   
   );
 }
  

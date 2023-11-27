@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.23.3",
     "@headlessui/react": "^1.7.15",
+    "@livekit/components-react": "^1.1.6",
+    "@livekit/components-styles": "^1.0.6",
     "@next-auth/prisma-adapter": "^1.0.7",
-    "@prisma/client": "^4.15.0",
+    "@prisma/client": "^5.1.1",
     "@tailwindcss/forms": "^0.5.3",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
@@ -21,10 +24,14 @@
     "bcrypt": "^5.1.0",
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
+    "emoji-picker-react": "^4.4.10",
     "encoding": "^0.1.13",
     "eslint": "8.42.0",
     "eslint-config-next": "^13.4.5",
+    "livekit-client": "^1.13.2",
+    "livekit-server-sdk": "^1.2.6",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.274.0",
     "next": "^13.4.5",
     "next-auth": "^4.22.1",
     "next-cloudinary": "^4.12.0",
@@ -38,16 +45,20 @@
     "react-hook-form": "^7.44.3",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.9.0",
+    "react-router-dom": "^6.15.0",
     "react-select": "^5.7.3",
     "react-spinners": "^0.13.8",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3",
+    "wavesurfer.js": "^7.1.2",
+    "zego-express-engine-webrtc": "^2.17.0",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/lodash": "^4.14.195",
+    "@types/wavesurfer.js": "^6.0.6",
     "prettier-plugin-prisma": "^4.13.0",
-    "prisma": "^4.15.0"
+    "prisma": "^5.1.1"
   }
 }
