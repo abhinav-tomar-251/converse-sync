@@ -28,12 +28,7 @@ const ConversationPage = async ({params}: {params: Iparams}) => {
             <div className="flex flex-col h-full">
                 <Header conversation = {conversation} />
                 <Body initialMessages={messages}/>
-                <iframe
-                    src="https://www.chatbase.co/chatbot-iframe/SirfkViSqnkeWHV0hfqNo"
-                    width="100%"
-                    className="height: 100% min-height: 700px frameborder: 0"
-></iframe>
-
+                
                 <Form/>
             </div>
         </div>
