@@ -20,7 +20,7 @@ import EmojiPicker from "emoji-picker-react";
 // import CaptureAudio from "./CaptureAudio";
 import dynamic from "next/dynamic";
 
-const CaptureAudio = dynamic(()=> import('./CaptureAudio'),{ssr:false,});
+// const CaptureAudio = dynamic(()=> import('./CaptureAudio'),{ssr:false,});
 const Form = () => {
   const { conversationId } = useConversation();
   
@@ -59,13 +59,13 @@ const Form = () => {
 
   useEffect(() => {
     const handleOutsideClick = (event: any) => {
-    if(event.target.id !== "emoji-open"){  
-      if (emojiPickerRef.current &&
-         !emojiPickerRef.current.contains(event.target)) {
-        setShowEmojiPicker(false);
+      if (event.target.id !== "emoji-open") {
+        if (emojiPickerRef.current &&
+            !(emojiPickerRef.current as HTMLElement).contains(event.target)) {
+          setShowEmojiPicker(false);
+        }
       }
     }
-  }
     window.addEventListener('click', handleOutsideClick);
 
     return () => {
@@ -160,9 +160,9 @@ const Form = () => {
       </form>
  </>
  )}
-  {showAudioRecorder && (
+  {/* {showAudioRecorder && (
     <CaptureAudio hide={() => setshowAudioRecorder(false)} />
-  )}
+  )} */}
     </div>
    
   );
