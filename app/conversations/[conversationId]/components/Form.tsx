@@ -78,7 +78,7 @@ const Form = () => {
   }
 
   const handleEmojiClick = (emoji: any) => {
-    setValue('message', `${emoji.emoji}`, { shouldValidate: true });
+    setValue('message' + `${emoji.emoji}`, { shouldValidate: true });
     // setValue((message) => (message += emoji.emoji));
   }
 
