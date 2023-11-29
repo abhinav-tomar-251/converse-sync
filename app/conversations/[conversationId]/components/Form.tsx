@@ -77,9 +77,13 @@ const Form = () => {
     setShowEmojiPicker(!showEmojiPicker);
   }
 
+  // const handleEmojiClick = (emoji: any) => {
+  //   setValue('message' , `${emoji.emoji}`);
+  //   // setValue((message) => (message += emoji.emoji));
+  // }
+
   const handleEmojiClick = (emoji: any) => {
-    setValue('message' , `${emoji.emoji}`);
-    // setValue((message) => (message += emoji.emoji));
+    setValue(`message`, `${emoji.emoji}`, { shouldValidate: true });
   }
 
   const [showAudioRecorder, setshowAudioRecorder] = useState(false);
