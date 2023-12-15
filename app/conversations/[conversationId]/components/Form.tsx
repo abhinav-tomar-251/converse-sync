@@ -17,7 +17,7 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { FaMicrophone } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import EmojiPicker from "emoji-picker-react";
-// import CaptureAudio from "./CaptureAudio";
+import CaptureAudio from "@/app/conversations/[conversationId]/components/CaptureAudio";
 import dynamic from "next/dynamic";
 
 // const CaptureAudio = dynamic(()=> import('./CaptureAudio'),{ssr:false,});
@@ -136,11 +136,11 @@ const Form = () => {
           required 
           placeholder="Type your message here..."
         />
-          {/* <FaMicrophone
+          <FaMicrophone
           size={30}
           className="text-indigo-900 cursor-pointer hover:text-indigo-800"
           onClick={() => setshowAudioRecorder(true)}
-        /> */}
+        />
         <button
           type="submit"
           className="
@@ -159,9 +159,9 @@ const Form = () => {
       </form>
  </>
  )}
-  {/* {showAudioRecorder && (
+  {showAudioRecorder && (
     <CaptureAudio hide={() => setshowAudioRecorder(false)} />
-  )} */}
+  )}
     </div>
    
   );
