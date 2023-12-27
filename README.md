@@ -1,4 +1,4 @@
-# ConverseSync
+# ConverseSync  (Work in Progress)
 
 ConverseSync is a full-stack web application that provides real-time chat functionality. Users can create accounts, connect with other users on the platform, and engage in chat conversations. The application also supports image sharing and profile customization.
 
